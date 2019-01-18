@@ -5,7 +5,7 @@
 /*.ez
 
 # For keeping OAuth tokens away from public eye
-/config/config.exs
+config/config.exs
 
 # Generated on crash by the VM
 erl_crash.dump
