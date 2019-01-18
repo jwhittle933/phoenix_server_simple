@@ -7,19 +7,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Discuss!</title>
+    <title>Discuss!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
     <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
+      <nav class="navbar navbar-light bg-light">
+        <h1 class="bg-dark mb-0">Framework Discussions</h1>
+        <%= if @conn.assigns[:user] do %>
+            <%= link "Logout", to: auth_path(@conn, :signout) %>
+        <% else %>
+            <%= link "Sign in with GitHub", to: auth_path(@conn, :request, "github"), class: "btn btn-primary" %>
+        <% end %>
+      </nav>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
