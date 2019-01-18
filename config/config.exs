@@ -32,3 +32,8 @@ config :ueberauth, Ueberauth,
     github: { Ueberauth.Strategy.Github, []}
   ]
 
+
+# Add config options
+config :ueberauth, Ueberauth.Strategy.Github.OAuth,
+client_id: "Token", 
+client_secret: "Token"
