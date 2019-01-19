@@ -18,8 +18,7 @@ Strip to Server
 
 At the root of the project, you'll notice a diretory named `web`. At the base of the web directory, open the `router.ex`. Below the initial `pipline` plugs, you'll see two two `scope` definitions, one scoped to `"/"` and the other to `"/auth"`. 
 
-	`scope "/", Discuss do
-	    # Use the default browser stack
+	scope "/", Discuss do
 	    pipe_through(:browser)
 
 	    resources("/", TopicController)
@@ -31,4 +30,4 @@ At the root of the project, you'll notice a diretory named `web`. At the base of
 	    get("/signout", AuthController, :signout)
 	    get("/:provider", AuthController, :request)
 	    get("/:provider/callback", AuthController, :callback)
-  	end` 
+  	end 
