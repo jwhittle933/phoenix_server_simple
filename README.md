@@ -16,7 +16,7 @@ Go to [`localhost:4000`](http://localhost:4000) from your browser to see the app
 Strip to Server
 ---------------
 
-At the root of the project, you'll notice a diretory named `web`. At the base of the web directory, open the `router.ex`. Below the initial `pipline` plugs, you'll see two two `scope` definitions, one scoped to `"/"` and the other to `"/auth"`. 
+At the root of the project, you'll notice a diretory named `web`. At the base of the web directory, open the `router.ex`. Below the initial `pipline` plugs, you'll see two `scope` definitions, one scoped to `"/"` and the other to `"/auth"`. 
 
 	scope "/", Discuss do
 	    pipe_through(:browser)
