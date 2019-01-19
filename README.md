@@ -1,4 +1,7 @@
-# Discuss
+Discuss List Application
+==========================
+
+Demo app from Udemy Elixir/Phonix course.  
 
 To start your Phoenix app:
 
