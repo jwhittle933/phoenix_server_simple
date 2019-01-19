@@ -1,18 +1,19 @@
 defmodule Discuss.User do
-    use Discuss.Web, :model
+  use Discuss.Web, :model
 
-    schema "users" do 
-        field :email, :string
-        field :provider, :string
-        field :token, :string
+  schema "users" do
+    field(:email, :string)
+    field(:provider, :string)
+    field(:token, :string)
+    has_many(:topics, Discuss.Topic)
+    has_many(:comments, Discuss.Comment)
 
-        timestamps()
-    end
+    timestamps()
+  end
 
-    def changeset(struct, params \\ %{}) do 
-        struct
-        |> cast(params, [:email, :token, :provider])
-        |> validate_required([:email, :token, :provider])
-    end
-
+  def changeset(struct, params \\ %{}) do
+    struct
+    |> cast(params, [:email, :token, :provider])
+    |> validate_required([:email, :token, :provider])
+  end
 end
