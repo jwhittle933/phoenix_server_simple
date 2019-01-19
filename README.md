@@ -1,7 +1,7 @@
 Discuss List Application
 ==========================
 
-Demo app from Udemy Elixir/Phonix course. Great boilerplate application for anyone just entering the Elixir world. Below, you'll see how to clone, run, and alter the application for your own purposes. See the fantastic [Phoenix Docs](https://hexdocs.pm/phoenix/installation.html) for installing a scratch project. 
+Demo app from Udemy Elixir/Phonix course. Great boilerplate application for anyone just entering the Elixir world. Below, you'll see how to clone, run, and alter the application for your own purposes. See the [Phoenix Docs](https://hexdocs.pm/phoenix/installation.html) for installing a project from scratch. 
 
 To grab this repo as boilerplate
   * `git clone https://github.com/jwhittle933/phoenix_server_simple.git`
@@ -16,4 +16,19 @@ Go to [`localhost:4000`](http://localhost:4000) from your browser to see the app
 Strip to Server
 ---------------
 
-At the root of the project, you'll notice a diretory named `web`. At the base of the web directory, open the `router.ex`. Below the initial `pipline` plugs, you'll see two two `scope` definitions, one scoped to `"/"` and the other to `"/auth"`. Under the first, 
+At the root of the project, you'll notice a diretory named `web`. At the base of the web directory, open the `router.ex`. Below the initial `pipline` plugs, you'll see two two `scope` definitions, one scoped to `"/"` and the other to `"/auth"`. 
+
+	`scope "/", Discuss do
+	    # Use the default browser stack
+	    pipe_through(:browser)
+
+	    resources("/", TopicController)
+	end
+
+  	scope "/auth", Discuss do
+	    pipe_through(:browser)
+
+	    get("/signout", AuthController, :signout)
+	    get("/:provider", AuthController, :request)
+	    get("/:provider/callback", AuthController, :callback)
+  	end` 
