@@ -31,3 +31,5 @@ At the root of the project, you'll notice a diretory named `web`. At the base of
 	    get("/:provider", AuthController, :request)
 	    get("/:provider/callback", AuthController, :callback)
   	end 
+
+The first scope uses a resource route to `"/"`, handled by the TopicController. This is RESTful shorthand, where each HTTP verb is connected to a controller method by convention. See the [docs](https://hexdocs.pm/phoenix/routing.html#resources) for a verbose explanation of RESTful api routing conventions. The TopicController can be found in [`web/controllers/topic_controller.ex`](https://github.com/jwhittle933/phoenix_server_simple/blob/master/web/controllers/topic_controller.ex). In order to edit 
