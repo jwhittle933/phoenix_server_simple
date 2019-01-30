@@ -1,6 +1,8 @@
 Discuss List Application
 ==========================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jwhittle933/phoenix_server_simple.svg)](https://greenkeeper.io/)
+
 Demo app from Udemy Elixir/Phonix course. Great boilerplate application for anyone just entering the Elixir world or who wants to see MVC from a functional paradigm. Below, you'll see how to clone, run, and alter the application for your own purposes. See the [Phoenix Docs](https://hexdocs.pm/phoenix/installation.html) for installing a project from scratch and advanced concepts. 
 
 To grab this repo as boilerplate
